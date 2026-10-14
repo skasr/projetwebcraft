@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    --bleu: #2563eb;
+    --bleu-fonce: #1e40af;
+    --gris: #f3f4f6;
+    --texte: #222;
+    --blanc: #fff;
+    --rouge: #dc2626;
+    --vert: #16a34a;
+    --ombre: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    color: var(--texte);
+    background-color: var(--blanc);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrap {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--blanc);
+    box-shadow: var(--ombre);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.haut {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+}
+
+.logo span {
+    color: var(--texte);
+}
+
+#btnMenu {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--texte);
+}
+
+#menu {
+    display: none;
+    width: 100%;
+}
+
+#menu.ouvert {
+    display: block;
+}
+
+#menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+#menu a {
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+#menu a:hover, #menu a.actif {
+    color: var(--bleu);
+}
+
+.banniere {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: var(--blanc);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.banniere h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    animation: apparition 1s ease-out;
+}
+
+.sousTitre {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    animation: apparition 1s ease-out 0.3s both;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bouton {
+    display: inline-block;
+    background-color: var(--blanc);
+    color: var(--bleu);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bouton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bloc {
+    padding: 60px 0;
+}
+
+.gris {
+    background-color: var(--gris);
+}
+
+.bloc h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.titre-section {
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.barre-filtres {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.barre-filtres input,
+.barre-filtres select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+}
+
+.barre-filtres input:focus,
+.barre-filtres select:focus {
+    outline: none;
+    border-color: var(--bleu);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid var(--bleu);
+    border-radius: 50%;
+    margin: 40px auto;
+    animation: tourne 1s linear infinite;
+}
+
+@keyframes tourne {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.msg-erreur {
+    color: var(--rouge);
+    text-align: center;
+    font-weight: 500;
+}
+
+.cartes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.carte {
+    background-color: var(--blanc);
+    border-radius: 10px;
+    box-shadow: var(--ombre);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carte img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.infos {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.infos h3 {
+    font-size: 18px;
+}
+
+.client {
+    color: #666;
+    font-size: 14px;
+}
+
+.cat {
+    font-size: 13px;
+    color: var(--bleu);
+    font-weight: 600;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background-color: #e0e7ff;
+    color: var(--bleu-fonce);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.badge-niveau {
+    display: inline-block;
+    background-color: #fef3c7;
+    color: #92400e;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.dispo, .complet {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.dispo {
+    background-color: #dcfce7;
+    color: var(--vert);
+}
+
+.complet {
+    background-color: #fee2e2;
+    color: var(--rouge);
+}
+
+.details-ligne {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+}
+
+.prix {
+    font-weight: 700;
+    color: var(--texte);
+}
+
+.boutons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.btn-details, .btn-inscrire {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-details {
+    background-color: var(--bleu);
+    color: var(--blanc);
+}
+
+.btn-details:hover {
+    background-color: var(--bleu-fonce);
+}
+
+.btn-inscrire {
+    background-color: var(--vert);
+    color: white;
+    font-size: 14px;
+}
+
+.btn-inscrire:hover {
+    background-color: #15803d;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup.ouvert {
+    display: flex;
+}
+
+.popup-box {
+    background-color: var(--blanc);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 25px;
+    animation: apparition 0.3s ease-out;
+}
+
+.popup-box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.popup-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    margin-bottom: 10px;
+}
+
+.popup-box ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.croix {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.croix:hover {
+    color: var(--rouge);
+}
+
+footer {
+    background-color: #1f2937;
+    color: #ddd;
+    padding: 30px 0;
+}
+
+.bas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.liens {
+    display: flex;
+    gap: 15px;
+}
+
+.liens a {
+    transition: color 0.3s;
+}
+
+.liens a:hover {
+    color: var(--blanc);
+}
+
+.carte img {
+    height: 180px;
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+
+    #btnMenu {
+        display: none;
+    }
+
+    #menu {
+        display: block !important;
+        width: auto;
+    }
+
+    #menu ul {
+        flex-direction: row;
+        gap: 25px;
+        padding-top: 0;
+    }
+
+    .banniere {
+        padding: 120px 0;
+    }
+
+    .banniere h1 {
+        font-size: 42px;
+    }
+
+    .sousTitre {
+        font-size: 18px;
+    }
+
+    .barre-filtres {
+        flex-direction: row;
+    }
+
+    .barre-filtres input {
+        flex: 2;
+    }
+
+    .barre-filtres select {
+        flex: 1;
+    }
+
+    .cartes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bas {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cartes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
