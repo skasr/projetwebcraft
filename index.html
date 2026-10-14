@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="wrap haut">
+            <a href="index.html" class="logo">WebCraft <span>Solutions</span></a>
+
+            <button id="btnMenu">☰</button>
+
+            <nav id="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="index.html" class="actif">Accueil</a></li>
+                    <li><a href="#projet">Projets</a></li>
+                    <li><a href="#formations">Formations</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="banniere">
+            <div class="wrap">
+                <h1>Bienvenue sur le portail WebCraft Solutions</h1>
+                <p class="sousTitre">Nos projets clients et nos formations techniques au même endroit.</p>
+                <a href="#projets" class="bouton">Voir les projets</a>
+            </div>
+        </section>
+
+        <section class="bloc" id="projets">
+            <div class="wrap">
+                <h2>Nos projets</h2>
+
+                <div class="barre-filtres">
+                    <input type="text" id="rechercheProjet" placeholder="Rechercher un projet...">
+                    <select id="techno">
+                        <option value="">Toutes les technos</option>
+                    </select>
+                    <select id="categorie">
+                        <option value="">Toutes les catégories</option>
+                    </select>
+                </div>
+
+                <div class="spinner" id="chargement1"></div>
+                <p class="msg-erreur" id="msgErreur1"></p>
+
+                <div class="cartes" id="cartesProjets"></div>
+            </div>
+        </section>
+
+        <section class="bloc gris" id="formations">
+            <div class="wrap">
+                <h2>Nos formations</h2>
+
+                <div class="barre-filtres">
+                    <input type="text" id="rechercheFormation" placeholder="Rechercher une formation...">
+                    <select id="categorieF">
+                        <option value="">Toutes les catégories</option>
+                    </select>
+                    <select id="niveau">
+                        <option value="">Tous les niveaux</option>
+                    </select>
+                    <select id="technoF">
+                        <option value="">Toutes les technos</option>
+                    </select>
+                </div>
+
+                <div class="spinner" id="chargement2"></div>
+                <p class="msg-erreur" id="msgErreur2"></p>
+
+                <div class="cartes" id="cartesFormations"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="popup" id="popupProjet" role="dialog" aria-modal="true">
+        <div class="popup-box">
+            <button class="croix" id="croix1" aria-label="Fermer">X</button>
+            <div id="contenuProjet"></div>
+        </div>
+    </div>
+
+    <div class="popup" id="popupFormation" role="dialog" aria-modal="true">
+        <div class="popup-box">
+            <button class="croix" id="croix2">X</button>
+            <div id="contenuFormation"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrap bas">
+            <p>&copy; 2025 WebCraft Solutions - Tous droits réservés</p>
+            <ul class="liens">
+                <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                <li><a href="#" aria-label="Instagram">Instagram</a></li>
+              <li><a href="#" aria-label="Github">Github</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
